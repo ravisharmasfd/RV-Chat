@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+  background-color: #453C67;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23453C67' cx='50' cy='0' r='50'/%3E%3Cg fill='%23473e6d' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%234a4073' cx='50' cy='100' r='50'/%3E%3Cg fill='%234c4278' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%234e447e' cx='50' cy='200' r='50'/%3E%3Cg fill='%23514684' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%2353488a' cx='50' cy='300' r='50'/%3E%3Cg fill='%23554a90' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23574c97' cx='50' cy='400' r='50'/%3E%3Cg fill='%23594f9d' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%235b51a3' cx='50' cy='500' r='50'/%3E%3Cg fill='%235d53a9' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%235f55b0' cx='50' cy='600' r='50'/%3E%3Cg fill='%236157b6' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%236359bc' cx='50' cy='700' r='50'/%3E%3Cg fill='%23655cc3' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23665ec9' cx='50' cy='800' r='50'/%3E%3Cg fill='%236860d0' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%236a62d7' cx='50' cy='900' r='50'/%3E%3Cg fill='%236b65dd' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%236D67E4' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: contain;
+}
+input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    background-color: #eee;
+  }
+  
+  .no-outline:focus {
+    outline: none;
+  }
+::-webkit-scrollbar{
+  width: 5px;
+}
+::-webkit-scrollbar-track{
+  background-color: #46C2CB;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #453C67;
+
+}
+.sharepost{
+  box-shadow: 4px 2px 30px 0px rgba(0,0,0,0.75);
+}
+.post-box{
+    box-shadow: 4px 2px 30px 0px rgba(0,0,0,0.75);
+  
+}
+.dp{
+  aspect-ratio: 1/1;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 25%;
+  position: relative;
+  left: 37.5%;
+  top: -25%;
+}
