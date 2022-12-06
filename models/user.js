@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const UserSchema = mongoose.Schema({
-    username:{
+    userName:{
         type: String,
         unique: true,
         require: true,
@@ -54,15 +54,17 @@ const UserSchema = mongoose.Schema({
         default:false,
     },
     city:{
-        type:Boolean,
-        max:50
+        type:String,
+        max:50,
+        default: ""
     },
     from:{
-        type:Boolean,
-        max:50
+        type:String,
+        max:50,
+        default: ""
     },
     description:{
-        type:Boolean,
+        type:String,
         default:"I am using RV Chat for connecting to world ",
         max:150,
         min: 10,

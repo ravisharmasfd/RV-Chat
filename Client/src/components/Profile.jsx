@@ -1,13 +1,13 @@
-import Feed from "../components/Feed"
 import Aside from "./Aside";
+import ProfilePage from "./ProfilePage";
 import Sidebar from "./Sidebar";
 
 
-export default function Home() {
+export default function Profile() {
   return (
     <div className="flex flex-row h-screen">
         <Sidebar></Sidebar>
-        <Feed></Feed>
+        <ProfilePage></ProfilePage>
         <Aside></Aside>
     </div>
   )

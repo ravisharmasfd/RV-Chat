@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"server\" \"client\""
   },
   "type": "module",
   "keywords": [
@@ -17,10 +19,14 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "helmet": "^6.0.1",
     "mongoose": "^6.7.4",
     "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
   }
 }
