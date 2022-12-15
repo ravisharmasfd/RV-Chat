@@ -31,15 +31,15 @@ const UserSchema = mongoose.Schema({
     password:{
         type: String,
         required: true,
-        min: 5,
+        min: 8,
     },
     dp:{
         type: String,
-        default: ""
+        default: "https://res.cloudinary.com/do7ueuane/image/upload/v1670762552/defaultProfile_n4qw2w.jpg"
     },
     coverPhoto:{
         type: String,
-        default: ""
+        default: "https://res.cloudinary.com/do7ueuane/image/upload/v1670762758/gradient-7258997_cid5y2.png"
     },
     followers:{type: Array,
         required: true,
@@ -56,12 +56,14 @@ const UserSchema = mongoose.Schema({
     city:{
         type:String,
         max:50,
-        default: ""
+        default: "RV WORLD",
+        min:2
     },
     from:{
         type:String,
         max:50,
-        default: ""
+        default: "RV WORLD",
+        min:2
     },
     description:{
         type:String,
@@ -79,5 +81,5 @@ const UserSchema = mongoose.Schema({
         enum : [1,2,3,4],
         default : 4,
     },
-},{timestamp:true});
+},{timestamps:true});
 export default new mongoose.model("User", UserSchema);

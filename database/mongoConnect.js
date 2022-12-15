@@ -1,13 +1,10 @@
 import mongoose from "mongoose";
-import * as dotenv from 'dotenv'
-
-
-dotenv.config();
-const databaseConnect = async()=>{
-    const mongoPass = process.env.MONGO_PASS;
-    const userName = process.env.MONGO_USERNAME;
+import { MONGO_PASS, MONGO_USERNAME } from "../config/config.js";
+export const databaseConnect = async()=>{
+    const mongoPass = MONGO_PASS;
+    const userName = MONGO_USERNAME;
     await mongoose.connect(
         `mongodb+srv://${userName}:${mongoPass}@rvchat.aeob5dz.mongodb.net/?retryWrites=true&w=majority`
       );
 }
-export default databaseConnect;
+export const db = mongoose.Connection;

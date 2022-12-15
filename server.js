@@ -1,27 +1,24 @@
 import express from 'express';
 import helmet from 'helmet';
-import * as dotenv from 'dotenv';
 import morgan from 'morgan';
-import mongoConnect from './database/mongoConnect.js'
-import authRoute from './routes/auth.js'
-import userRoute from "./routes/user.js"
-import postRoute from "./routes/post.js"
-import cors from 'cors'
+import {databaseConnect} from './database/mongoConnect.js';
+import router from './routes/index.js';
+import cors from 'cors';
+import { PORT } from './config/config.js';
 
-dotenv.config();
-const port = process.env.PORT || 5000;
-mongoConnect();
+
+const port = PORT || 5000;
+databaseConnect();
 console.log("connected to mongo successfully");
 
 const app = express();
 
 app.use(morgan('combined'));
-app.use(cors())
+app.use(cors());
 app.use(helmet());
-app.use(express.json())
-app.use('/auth',authRoute);
-app.use('/user',userRoute);
-app.use("/post", postRoute);
+app.use(express.json());
+app.use('/api/v1',router);
+
 
 
 

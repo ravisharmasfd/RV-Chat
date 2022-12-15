@@ -1,7 +1,4 @@
-import Feed from "../components/Feed"
-import Aside from "./Aside";
-import Sidebar from "./Sidebar";
-
+import {Feed,Aside,Sidebar} from "../components/index.js"
 
 export default function Home() {
   return (

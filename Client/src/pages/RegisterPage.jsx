@@ -10,6 +10,7 @@ export default function RegisterPage() {
     firstName : "",
     lastName : "",
     password : "",
+    cPassword: "",
   }
   const [registerForm,SetRegisterForm] =useState(initialRegisterForm);
    const handelInput=(e)=>{
@@ -18,20 +19,16 @@ export default function RegisterPage() {
    const handelForm=async(e)=>{
     e.preventDefault();
     try{
-      const res = await axios.post('http://localhost:8080/auth/register',registerForm);
+      if(registerForm.password != registerForm.cPassword){
+        throw "Password not match"
+      }
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/auth/register`,registerForm);
       console.log(res);
       window.alert(res.data.msg);
       navigate('/login')
     }catch(err){
-      window.alert("Check you input data");
+      window.alert("Check your credentials");
     }
-    //const res = await fetch('http://localhost:8080/auth/register',{
-      //method:"POST",
-      //body:JSON.stringify(registerForm),
-      //headers: {
-   ///     "content-type": "application/json",
-      //},
-   // });
   }
  
   return (
@@ -45,11 +42,12 @@ export default function RegisterPage() {
             <h2 className='mt-3'>Enter your Registration  details</h2>
 
             <form onSubmit={handelForm} className='mt-3 flex flex-col items-center justify-center' action="">
-              <input onChange={handelInput} name="email" value={registerForm.email} className='mt-3 bg-first no-outline rounded-md'type="text" placeholder='Email'></input>
+              <input onChange={handelInput} name="email" value={registerForm.email} className='mt-3 bg-first no-outline rounded-md'type="email" placeholder='Email'></input>
               <input onChange={handelInput} name="userName" value={registerForm.userName} className='mt-3 bg-first no-outline rounded-md'type="text" placeholder='User Name'></input>
               <input onChange={handelInput} name="firstName" value={registerForm.firstName} className='mt-3 bg-first no-outline rounded-md'type="text" placeholder='First Name'></input>
               <input onChange={handelInput} name="lastName" value={registerForm.lastName} className='mt-3 bg-first no-outline rounded-md'type="text" placeholder='Last Name'></input>
-              <input onChange={handelInput} name="password" value={registerForm.password} className='mt-3 bg-first no-outline rounded-md'type="password" placeholder='Password'></input>
+              <input minLength='8' onChange={handelInput} name="password" value={registerForm.password} className='mt-3 bg-first no-outline rounded-md'type="password" placeholder='Password'></input>
+              <input minLength='8' onChange={handelInput} name="cPassword" value={registerForm.cPassword} className='mt-3 bg-first no-outline rounded-md'type="password" placeholder='Conform Password'></input>
               <input className='mt-3 bg-first no-outline rounded-md p-2 cursor-pointer'type="submit"></input>
               </form>
             <Link to='/login' className='mt-3'>Already have a account</Link>
