@@ -5,6 +5,7 @@ import {Home,ProfilePage,LoginPage,RegisterPage} from "./pages/index.js"
 import appStore from "./store/context"
 import fetchUser from "./controllers/fetchUser"
 import { useState } from "react"
+import EditProfile from "./pages/EditProfile"
  
 
   
@@ -36,6 +37,7 @@ import { useState } from "react"
     <Route path="/profile/:userName" element={<ProfilePage></ProfilePage>}></Route>
     <Route path="/login" element={<LoginPage></LoginPage>}></Route>
     <Route path="/register" element={<RegisterPage></RegisterPage>}></Route>
+    <Route path="/edit" element={<EditProfile></EditProfile>}></Route>
    </Routes>
    </>
   )
