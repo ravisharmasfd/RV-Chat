@@ -24,8 +24,10 @@ export default function Profile({profileUser,isUserProfile}) {
   
 
   return (
-    <div className='basis-4/6 flex flex-col items-center overflow-y-scroll'>
+    <div className='basis-5/6 flex flex-col items-center h-screen overflow-y-scroll'>
         <ProfileInfo profileUser={profileUser} isUserProfile={isUserProfile}></ProfileInfo>
+        <div className='md:hidden'>
+          </div>
         {isUserProfile && <SharePost></SharePost>}
         {userPost.map(item => {
              return <Post postData={item} userData = {profileUser}></Post>

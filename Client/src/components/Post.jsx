@@ -53,7 +53,7 @@ function Post({postData,userData}) {
             <Link to={`/profile/${userData?.userName}`} className='hover:scale-105  flex flex-row justify-center mt-3'>
                 <img className='rounded-full w-8 h-8 mr-2 ml-2' src={userData?.dp}/>
                 <span  className='name mr-3 ml-3'><b>{`${userData?.firstName} ${userData?.lastName}`}</b></span>
-                <div><span className='mr-1'> 5</span><span>{moment(createdAt).fromNow()}</span></div>
+                <div><span>{moment(createdAt).fromNow()}</span></div>
             </Link>
             <div className='mt-3 mr-3 ml-3'><MoreVertIcon></MoreVertIcon></div>
         </div>

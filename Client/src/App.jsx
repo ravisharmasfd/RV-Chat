@@ -27,7 +27,7 @@ import EditProfile from "./pages/EditProfile"
   }
   useEffect(()=>{
     if(!state.appData.userLogin) fetch();
-  }, [])
+  }, [state.user])
   
   return (
     <>

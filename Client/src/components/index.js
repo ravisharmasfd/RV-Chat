@@ -1,7 +1,6 @@
 export { default as AppBar } from './AppBar';
-export { default as Aside } from './Aside';
-export { default as Feed } from './Feed';
 export { default as OnlineFriends } from './OnlineFriends';
+export { default as Feed } from './Feed';
 export { default as Post } from './Post';
 export { default as Profile } from './Profile';
 export { default as ProfileInfo } from './ProfileInfo';

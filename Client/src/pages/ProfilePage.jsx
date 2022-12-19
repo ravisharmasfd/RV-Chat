@@ -1,5 +1,4 @@
 
-import Aside from "../components/Aside";
 import Profile from "../components/Profile";
 import Sidebar from "../components/Sidebar";
 import { useState,useEffect,useContext } from "react";
@@ -33,10 +32,10 @@ export default function ProfilePage() {
     }
   }
   return (
-    <div className="flex flex-row h-screen">
+    <div className="flex flex-col md:flex-row">
         <Sidebar></Sidebar>
         <Profile profileUser={profileUser} isUserProfile={isUserProfile}></Profile>
-        <Aside></Aside>
+
     </div>
   )
 }

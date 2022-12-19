@@ -69,19 +69,19 @@ const UserSchema = mongoose.Schema({
     },
     description:{
         type:String,
-        default:"I am using RV Chat for connecting to world ",
+        default:"I am using RV Chat for connecting to the world ",
         max:150,
         min: 10,
     },
     gender:{
-        type:Number,
-        enum : [1,2,3,4],
-        default : 4,
+        type:String,
+        enum : ["MALE",'FEMALE','OTHER','PRIVATE INFO'],
+        default : 'PRIVATE INFO',
     },
     relation:{
-        type:Number,
-        enum : [1,2,3,4],
-        default : 4,
+        type:String,
+        enum : ['SINGLE','MARRIED','COMMITTED','OTHER','PRIVATE INFO'],
+        default : 'PRIVATE INFO',
     },
 },{timestamps:true});
 export default new mongoose.model("User", UserSchema);

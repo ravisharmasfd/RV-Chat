@@ -39,6 +39,10 @@ input {
     box-shadow: 4px 2px 30px 0px rgba(0,0,0,0.75);
   
 }
+.appBoxShadow{
+  box-shadow: 4px 2px 30px 0px rgba(0,0,0,0.75);
+
+}
 .dp{
   aspect-ratio: 1/1;
   border: 2px solid white;

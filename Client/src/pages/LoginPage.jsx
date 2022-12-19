@@ -28,19 +28,23 @@ function LoginPage() {
   }
   return (
     <div className='flex flex-row w-full h-screen items-center justify-center'>
-      <div className='flex flex-row items-center justify-center w-2/3 bg-white rounded-3xl'>
-        <div className='w-1/2 flex flex-col   h-full text-black p-20'>
-          <img src='../../public/logo.png'></img>
-          <p className='text-center font-mono font-bold text-lg'>Connect to world using RV Social Media Chat App</p>
+      <div className='h-[90%] flex flex-col items-center justify-center w-2/3 bg-white rounded-2xl md:w-1/3 appBoxShadow'>
+        <div className='w-full flex flex-col items-center justify-between text-black p-5'>
+          <img className='aspect-square w-1/2 basis-1/2 md:w-1/3' src='../../public/logo.png'></img>
+          <p className=' basis-1/2 text-center font-mono font-bold text-md'>Connect to world using RV Social Media Chat App</p>
         </div>
-        <div className='w-1/2  flex flex-col  bg-second  h-full p-20 m-6 rounded-2xl text-white items-center '>
-            <h2 className='mt-3'>Enter your Login details</h2>
-            <form onSubmit={handleLogin} className='mt-3 flex flex-col items-center justify-center' action="">
-            <input ref={emailRef} required className='mt-3 bg-first no-outline rounded-md'type="email" placeholder='Email'></input>
-            <input minLength = '8' ref={passRef} required className='mt-3 bg-first no-outline rounded-md' type="password" placeholder='Password'></input>
-            <input className='mt-3 bg-first no-outline rounded-md p-2 cursor-pointer'type="submit"></input>
+        <div className='w-5/6 flex flex-col h-2/5 bg-second rounded-2xl items-center justify-evenly'>
+            <h2 className='font-bold text-center p-2'>Enter your Login details</h2>
+            <form onSubmit={handleLogin} className=' flex flex-col items-center justify-center w-full ' >
+            <div className='bg-white rounded-3xl w-5/6 flex flex-row justify-center  focus-within:outline-1 focus-within:outline-double focus-within:outline-black'>
+            <input ref={emailRef} required className='w-4/5 no-outline rounded-md'type="email" placeholder='Email'></input>
+            </div>
+            <div className='bg-white mt-2 rounded-3xl w-5/6 flex flex-row justify-center focus-within:outline-1 focus-within:outline-double focus-within:outline-black'>
+            <input minLength = '8' ref={passRef} required className='w-4/5 no-outline rounded-md ' type="password" placeholder='Password'></input>
+            </div>
+            <input type="submit" class="mt-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w=-1/2"/>
             </form>
-            <Link to='/register' className='mt-3'>Create Your account</Link>
+            <Link to='/register' className='mt-3 text-center w-5/6'>Create Your account</Link>
         </div>
       
       </div>

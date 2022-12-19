@@ -6,23 +6,18 @@ import authMiddleWare from '../middleWare/auth.js'
 const router = Router();
 
 
-router.put('/:id',async(req,res)=>{
-    if(req.body.userId === req.params.id || req.body.isAdmin){
-        if(req.body.password){
-            try{
-                const salt = await bcrypt.genSaltSync(10);
-                req.body.password = await bcrypt.hashSync(req.body.password, salt);
-            }catch(err){res.status(500).json({err})}  
-        }
+router.put('/',authMiddleWare,async(req,res)=>{
         try{
-            const updateUser = await User.findByIdAndUpdate(req.body.id,{
-                $set : req.body,
-            });
-            res.status(200).json({msg:"updated successfully."})
+            const {firstName,lastName,description,gender ,city,from,relation} = req.body;
+            if(firstName && lastName && description && gender && city && from && relation){
+                const updateUser = await User.findByIdAndUpdate(req.user._id,{
+                    $set : req.body,
+                });
+                const us = await User.findOne({_id:req.user._id},{password:0,__v:0,isAdmin:0,updatedAt:0});
+                res.status(200).json({msg:"updated successfully.",data:us});
+            }
+            else req.status(400);
         }catch(err){res.status(500).json({err})}
-    }else{
-        res.status(403).json({msg:"You can not update other user."})
-    }
 })
 router.delete('/:id',async(req,res)=>{
     if(req.body.userId === req.params.id || req.body.isAdmin){

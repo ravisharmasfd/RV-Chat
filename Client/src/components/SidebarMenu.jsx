@@ -1,46 +1,33 @@
 import FeedIcon from '@mui/icons-material/Feed';
 import ChatIcon from '@mui/icons-material/Chat';
-import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
-import LiveHelpIcon from '@mui/icons-material/LiveHelp';
-import WorkIcon from '@mui/icons-material/Work';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import SchoolIcon from '@mui/icons-material/CalendarMonth';
+import { Link } from 'react-router-dom';
+
 
 function SidebarMenu() {
   return (
-    <div className=' flex flex-col justify-items-start p-0 '>
+    <div className=' flex w-full flex-row overflow-hidden md:flex-col justify-evenly  md:items-center '>
   
-      <button
+      <Link to="/"
         className="category-btn text-white mt-5 p-0"
       >
         <span className=' mr-3'>
         <FeedIcon/>
         </span>
-        <span>
+        <span className='hidden md:block'>
           Feed
         </span>
-      </button>
+      </Link>
       <button
         className="category-btn text-white mt-5 p-0"
       >
         <span className='mr-3'>
         <ChatIcon/>
         </span>
-        <span>
+        <span className='hidden md:block'>
           Chats
-        </span>
-      </button>
-
-      <button
-        className="category-btn text-white mt-5 p-0 "
-      >
-        <span className=' mr-3'>
-        <VideoLibraryIcon/>
-        </span>
-        <span>
-          Videos
         </span>
       </button>
 
@@ -50,7 +37,7 @@ function SidebarMenu() {
         <span className=' mr-3'>
         <Diversity3Icon/>
         </span>
-        <span>
+        <span className='hidden md:block'>
           Group
         </span>
       </button>
@@ -61,30 +48,8 @@ function SidebarMenu() {
         <span className=' mr-3'>
         <BookmarkAddedIcon/>
         </span>
-        <span>
+        <span className='hidden md:block'>
         Bookmarks
-        </span>
-      </button>
-
-      <button
-        className="category-btn text-white mt-5 p-0"
-      >
-        <span className=' mr-3'>
-        <LiveHelpIcon/>
-        </span>
-        <span>
-          Questions
-        </span>
-      </button>
-
-      <button
-        className="category-btn text-white mt-5 p-0"
-      >
-        <span className=' mr-3'>
-        <WorkIcon/>
-        </span>
-        <span>
-          Jobs
         </span>
       </button>
 
@@ -94,19 +59,8 @@ function SidebarMenu() {
         <span className=' mr-3'>
         <CalendarMonthIcon/>
         </span>
-        <span>
+        <span className='hidden md:block'>
           Events
-        </span>
-      </button>
-
-      <button
-        className="category-btn text-white mt-5 p-0"
-      >
-        <span className=' mr-3'>
-        <SchoolIcon/>
-        </span>
-        <span>
-          Courses
         </span>
       </button>
       
