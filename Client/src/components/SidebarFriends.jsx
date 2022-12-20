@@ -3,9 +3,11 @@ import React, { useContext, useEffect } from 'react'
 import { useState } from 'react';
 import Cookies from 'js-cookie';
 import {Link} from 'react-router-dom'
+import appStore from '../store/context';
 
 function SidebarFriends() {
     const [friends,setFriends] = useState([]);
+    const {state} = useContext(appStore)
     async function friend(){
         try {
             const token = Cookies.get('token')
@@ -21,8 +23,7 @@ function SidebarFriends() {
     }
     useEffect(()=>{
         friend();
-        console.log(friends);
-    },[])
+    },[state.user?.following])
   return (
     <div className='hidden md:flex flex-col w-5/6 m-auto bg-first p-4 rounded-lg justify-center items-center overflow-hidden'>
         <h3 className='text-white'><b>Friends</b></h3>

@@ -16,7 +16,7 @@ input {
     border-right-style: hidden;
     border-left-style: hidden;
     border-bottom-style: groove;
-    background-color: #eee;
+    background-color: rgb(255, 255, 255);
   }
   
   .no-outline:focus {

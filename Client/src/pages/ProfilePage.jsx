@@ -1,23 +1,23 @@
 
 import Profile from "../components/Profile";
 import Sidebar from "../components/Sidebar";
-import { useState,useEffect,useContext } from "react";
+import { useState,useContext, useLayoutEffect } from "react";
 import { useParams } from "react-router-dom";
 import appStore from "../store/context";
 import fetchPerson from "../controllers/fetchPerson";
 
 export default function ProfilePage() {
-  const [isUserProfile,setIsUserProfile] = useState(false);
-  const [profileUser,setProfileUser] = useState(null);
   const {state} = useContext(appStore);
   const {userName} = useParams();
-  useEffect(() => {
+  const [isUserProfile,setIsUserProfile] = useState(false);
+  const [profileUser,setProfileUser] = useState(state.user);
+  
+  useLayoutEffect(() => {
     prof()
-  }, [])
+  },[userName,state.user]);
   
   async function prof(){
     try {
-      if(!profileUser){
         if(userName == state?.user?.userName){
           setIsUserProfile(true);
           setProfileUser(state.user);
@@ -26,9 +26,8 @@ export default function ProfilePage() {
           setIsUserProfile(false);
           setProfileUser(person);
         }
-      }
     } catch (error) {
-      console.log(error);
+      alert("error in server")
     }
   }
   return (

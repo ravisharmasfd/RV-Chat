@@ -45,7 +45,7 @@ function Post({postData,userData}) {
     useEffect(
         ()=>{
             checkLike();
-        },[]
+        },[postData,userData]
     )
   return (
     <div className='post-box bg-second mt-5 rounded-xl w-2/3 flex flex-col text-white'>

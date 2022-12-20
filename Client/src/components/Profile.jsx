@@ -20,7 +20,7 @@ export default function Profile({profileUser,isUserProfile}) {
   }
   useEffect(() => {
     func();
-  }, []);
+  }, [profileUser,isUserProfile]);
   
 
   return (
@@ -30,7 +30,7 @@ export default function Profile({profileUser,isUserProfile}) {
           </div>
         {isUserProfile && <SharePost></SharePost>}
         {userPost.map(item => {
-             return <Post postData={item} userData = {profileUser}></Post>
+             return <Post key= {item._id} postData={item} userData = {profileUser}></Post>
             })          
         }
 

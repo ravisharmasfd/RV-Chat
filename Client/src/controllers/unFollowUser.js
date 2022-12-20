@@ -1,11 +1,11 @@
 import Cookies from "js-cookie";
+
 const unFollowUser = async(_id)=>{
     const token = Cookies.get('token');
     
     try {
-        // const res = await axios.put(`${import.meta.env.VITE_API_URL}/user/unfollow/${_id}`,{ headers: { Authorization: `Bearer ${token}` } })
         const res = await fetch(`${import.meta.env.VITE_API_URL}/user/unfollow/${_id}`,{
-            method: 'put', 
+            method: 'PUT', 
             headers: new Headers({
                 'Authorization': `Bearer ${token}` })
             });

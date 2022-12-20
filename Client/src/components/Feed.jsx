@@ -17,7 +17,7 @@ function Feed() {
       }
       
     })
-    console.log("🚀 ~ file: Feed.jsx:16 ~ feedTimeline ~ res", res.data.dataUser)
+
     const timelinePost = res.data.dataUser;
     setTimeline(timelinePost);
     

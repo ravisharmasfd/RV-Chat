@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -14,7 +14,6 @@
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.10.16",
     "axios": "^1.2.1",
-    "dotenv": "^16.0.3",
     "js-cookie": "^3.0.1",
     "moment": "^2.29.4",
     "react": "^18.2.0",

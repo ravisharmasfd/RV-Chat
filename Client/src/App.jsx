@@ -1,12 +1,13 @@
 import { Route, Routes, useNavigate } from "react-router-dom"
 import { useContext, useEffect } from "react"
 import { AppBar } from "./components"
-import {Home,ProfilePage,LoginPage,RegisterPage} from "./pages/index.js"
+import {Home,ProfilePage,LoginPage,RegisterPage,EditProfile} from "./pages/index.js"
 import appStore from "./store/context"
 import fetchUser from "./controllers/fetchUser"
 import { useState } from "react"
-import EditProfile from "./pages/EditProfile"
- 
+import CheckAuth from './utils/CheckAuth.jsx'
+import Guest from "./utils/Guest"
+
 
   
    function App() {
@@ -31,13 +32,13 @@ import EditProfile from "./pages/EditProfile"
   
   return (
     <>
-    <AppBar></AppBar>
+    {state.appData.userLogin && <AppBar></AppBar>}
    <Routes>
-    <Route path="/" element={<Home></Home>}></Route>
-    <Route path="/profile/:userName" element={<ProfilePage></ProfilePage>}></Route>
-    <Route path="/login" element={<LoginPage></LoginPage>}></Route>
-    <Route path="/register" element={<RegisterPage></RegisterPage>}></Route>
-    <Route path="/edit" element={<EditProfile></EditProfile>}></Route>
+    <Route path="/" element={<CheckAuth><Home></Home></CheckAuth>}></Route>
+    <Route path="/profile/:userName" element={<CheckAuth><ProfilePage></ProfilePage></CheckAuth>}></Route>
+    <Route path="/login" element={<Guest><LoginPage></LoginPage></Guest>}></Route>
+    <Route path="/register" element={<Guest><RegisterPage></RegisterPage></Guest>}></Route>
+    <Route path="/edit" element={<CheckAuth><EditProfile></EditProfile></CheckAuth>}></Route>
    </Routes>
    </>
   )

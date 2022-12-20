@@ -1,9 +1,12 @@
-import React, { useContext } from 'react'
-import { Navigate } from 'react-router-dom';
-import appStore from '../store/context'
+import Cookies from 'js-cookie';
+import React from 'react'
+import { Navigate } from "react-router-dom";
 
-export default function Guest({children}) {
-    const {state} =  useContext(appStore);
 
-    return state.user ? <Navigate to = "/"></Navigate> : {children};
+function Guest({children}) {
+    const token = Cookies.get('token');
+    return token ? <Navigate to="/" replace = {true} ></Navigate> : children;
+
 }
+
+export default Guest
