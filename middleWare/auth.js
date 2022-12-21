@@ -4,7 +4,6 @@ import { JWT_SECRET } from '../config/config.js';
 
 const authMiddleWare = async(req,res,next)=>{
     const {authorization} = req.headers;
-    console.log(authorization)
     if(authorization){
         try {
             const authorHead = authorization.split(" ");

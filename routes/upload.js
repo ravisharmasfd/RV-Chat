@@ -5,8 +5,11 @@ import authMiddleWare from '../middleWare/auth.js';
 import path from 'path';
 import multer from 'multer';
 import post from '../models/post.js';
+import url from 'url';
+import User from '../models/user.js';
 
-
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 cloudinary.config({
     cloud_name: CLOUD_NAME,
     api_key: CLOUD_KEY,
@@ -14,7 +17,7 @@ cloudinary.config({
 });
 
 const storage = multer.diskStorage({
-    destination: '../public/uploads',
+    destination: `${path.join(__dirname,'/publicUpload/image')}`,
     fileFilter: (req, file, cb) => {
         try {
             if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
@@ -68,7 +71,6 @@ router.post('/post',authMiddleWare,async(req, res) => {
                 const image = data.secure_url;
                 const newPost = await new post({postedBy,postDescription,image});
                 const savePost = await newPost.save();
-                console.log(savePost);
             }
         });
     } catch (error) {
@@ -77,6 +79,48 @@ router.post('/post',authMiddleWare,async(req, res) => {
     
 });
 
+router.post('/dp',authMiddleWare,async(req, res) => {
+    try {
+        await upload(req, res,async(err) => {
+            if(err) {
+                res.send(err);
+            } else {
+                const data = await cloudinary.uploader.upload(req.file.path, (error, result) => {
+                    if(error) {
+                        res.send(error);
+                    }
+                });
+                const postedBy = req.user._id;
+                const image = data.secure_url;
+                const update = await User.updateOne({_id:postedBy},{dp:image});
+            }
+        });
+    } catch (error) {
+        res.status(500).json("error while uploading");
+    }
+    
+});
+router.post('/cover',authMiddleWare,async(req, res) => {
+    try {
+        upload(req, res,async(err) => {
+            if(err) {
+                res.send(err);
+            } else {
+                const data = await cloudinary.uploader.upload(req.file.path, (error, result) => {
+                    if(error) {
+                        res.send(error);
+                    }
+                });
+                const postedBy = req.user._id;
+                const image = data.secure_url;
+                const update = await User.updateOne({_id:postedBy},{coverPhoto:image});
+            }
+        });
+    } catch (error) {
+        res.status(500).json("error while uploading");
+    }
+    
+});
 
 
 

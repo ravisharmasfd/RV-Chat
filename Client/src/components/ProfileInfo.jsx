@@ -6,6 +6,7 @@ import followUser from '../controllers/followUser';
 import unFollowUser from '../controllers/unFollowUser';
 import appStore from '../store/context';
 import AddHomeIcon from '@mui/icons-material/AddHome';
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 function ProfileInfo({profileUser,isUserProfile}) {
   
   const navigate = useNavigate();
@@ -34,10 +35,20 @@ function ProfileInfo({profileUser,isUserProfile}) {
     navigate(-1);
   }
   return (
-    <div className=' bg-second flex flex-col items-center rounded-2xl md:w-3/5 '>
+    <div className=' bg-second flex flex-col items-center rounded-2xl s:w-3/5 '>
         <div className="w-full ">
-            <img className="w-full aspect-[18/5]" src={coverPhoto}></img>
-            <img className='aspect-square w-1/5 rounded-full relative bottom-[20%] left-[40%]' src={dp}></img>
+            <div className="w-full  relative">
+            <div onClick={()=>{
+              navigate('editcover')
+            }} className='absolute top-[80%] right-3 opacity-60 bg-white aspect-square rounded-full hover:opacity-100 '><EditOutlinedIcon color='primary'/></div>
+              <img  className='w-full aspect-[18/5]' src={coverPhoto}></img>
+            </div>
+            <div className='aspect-square w-2/5 sm:w-1/5 rounded-full relative bottom-[20%] left-[30%] sm:left-[40%]'>
+            <div onClick={()=>{
+              navigate('editdp')
+            }} className=' absolute top-0 right-[-10%] opacity-60 bg-white aspect-square rounded-full hover:opacity-100'><EditOutlinedIcon color='primary'/></div>
+            <img  className='aspect-square w-full rounded-full' src={dp}></img>
+            </div>
         </div>
         <div className='flex flex-col justify-center items-center mb-5 text-white'>
             <span><b>{`${firstName.toUpperCase()} ${lastName.toUpperCase()}`}</b></span>
