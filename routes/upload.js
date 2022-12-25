@@ -4,9 +4,11 @@ import {CLOUD_NAME,CLOUD_KEY,CLOUD_SECRET} from '../config/config.js';
 import authMiddleWare from '../middleWare/auth.js';
 import path from 'path';
 import multer from 'multer';
-import post from '../models/post.js';
 import url from 'url';
 import User from '../models/user.js';
+import post from '../models/post.js';
+import fs from 'fs';
+
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -53,6 +55,7 @@ const upload = multer({
 
 
 const router = Router();
+
 router.post('/post',authMiddleWare,async(req, res) => {
     try {
         const {description} = req.body;
@@ -62,10 +65,13 @@ router.post('/post',authMiddleWare,async(req, res) => {
                 res.send(err);
             } else {
                 const data = await cloudinary.uploader.upload(req.file.path, (error, result) => {
+                    fs.unlinkSync(req.file.path);
+
                     if(error) {
                         res.send(error);
                     }
                 });
+                
                 const postedBy = req.user._id;
                 const postDescription = req.body.postDescription;
                 const image = data.secure_url;
