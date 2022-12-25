@@ -79,7 +79,7 @@ router.post('/post',authMiddleWare,async(req, res) => {
     
 });
 
-router.post('/dp',authMiddleWare,async(req, res) => {
+router.put('/dp',authMiddleWare,async(req, res) => {
     try {
         await upload(req, res,async(err) => {
             if(err) {
@@ -100,9 +100,9 @@ router.post('/dp',authMiddleWare,async(req, res) => {
     }
     
 });
-router.post('/cover',authMiddleWare,async(req, res) => {
+router.put('/cover',authMiddleWare,async(req, res) => {
     try {
-        upload(req, res,async(err) => {
+        await upload(req, res,async(err) => {
             if(err) {
                 res.send(err);
             } else {

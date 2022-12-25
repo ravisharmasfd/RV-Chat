@@ -24,7 +24,7 @@ export default function Profile({profileUser,isUserProfile}) {
   
 
   return (
-    <div className='basis-5/6 flex flex-col items-center h-screen overflow-y-scroll'>
+    <div className='basis-5/6 flex flex-col items-center h-screen '>
         <ProfileInfo profileUser={profileUser} isUserProfile={isUserProfile}></ProfileInfo>
         <div className='md:hidden'>
           </div>

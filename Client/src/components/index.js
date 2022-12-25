@@ -9,3 +9,9 @@ export { default as SharePost } from './SharePost';
 export { default as Sidebar } from './Sidebar';
 export { default as SidebarFriends } from './SidebarFriends';
 export { default as SidebarMenu } from './SidebarMenu';
+export { default as Modal } from './Modal';
+export { default as UpdateDp } from './UpdateDp.jsx';
+export { default as UpdateCover } from './UpdateCover.jsx';
+
+
+

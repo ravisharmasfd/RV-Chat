@@ -14,7 +14,7 @@ export default function ProfilePage() {
   
   useLayoutEffect(() => {
     prof()
-  },[userName,state.user]);
+  },[userName,state]);
   
   async function prof(){
     try {

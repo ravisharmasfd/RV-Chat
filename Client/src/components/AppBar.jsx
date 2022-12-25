@@ -29,7 +29,7 @@ function AppBar() {
   }
   
   return (
-   <div className="bg-second w-full flex flex-row h-8 md:h-20 items-center justify-between z-10">
+   <div className="bg-second w-full flex flex-row h-8 md:h-20 items-center justify-between">
     <Link to="/" className="basic-1/4 flex flex-row items-center justify-center"><span className="text-white ml-10"><b>RV CHAT</b></span></Link>
     <div className="hidden md:block  basic-1/4"><SearchBar></SearchBar></div>
     <div className="basic-2/4  flex flex-row items-center justify-between mr-5">
@@ -42,10 +42,8 @@ function AppBar() {
         <button onClick={logoutFunc} ><LogoutIcon  className="ml-2 cursor-pointer" sx={{ color: "white" }}></LogoutIcon></button>
         </div>
         <div className="md:hidden" onClick={()=>{
-          console.log(menu.current.classList)
           menu.current.classList.remove("hidden")
           menu.current.classList.add('absolute');
-          console.log(menu.current.classList)
         }} ><MenuIcon sx={{ color: "white" }} className="ml-2 cursor-pointer"></MenuIcon></div>
         <div ref={menu} className="top-0 right-0 w-screen h-screen z-50 hidden">
           <div  className="flex flex-col justify-space opacity-90 items-center w-full h-full bg-fourth rounded-lg">
