@@ -40,7 +40,7 @@ function SharePost() {
             setFile(null);
     }
   return (
-    <form onSubmit={handlePost} className='sharepost flex flex-col w-2/3 mt-5 rounded-2xl items-center bg-second'>
+    <form onSubmit={handlePost} className='sharepost flex flex-col w-2/3 rounded-2xl items-center bg-second mt-10 md:mt-24'>
         <div className=' focus-within:border-solid focus-within:border-white focus-within:border-2 flex flex-row justify-start  mt-4  bg-third rounded-3xl w-4/5' >
             <img className="mt-3 w-10 h-10 rounded-full mr-2 ml-2" src={state.user?.dp} alt="profile photo" />
             <textarea ref={textRef} maxLength='150' className='mt-3 no-outline  bg-transparent w-4/5'></textarea>

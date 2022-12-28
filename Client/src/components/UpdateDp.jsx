@@ -32,7 +32,7 @@ export default function UpdateDp() {
     }
     useEffect(()=>{},(state.user));
   return (
-    <form onSubmit={handleDp} className=' flex flex-col w-2/3 m-4  p-2 rounded-2xl items-center justify-around bg-second'>
+    <form onSubmit={handleDp} className=' flex flex-col w-2/4 m-4  p-2 rounded-2xl items-center justify-around bg-second'>
         <div className='aspect-square w-3/4 overflow-hidden rounded-2xl'><img src={state?.user?.dp} alt={`${state?.user?.userName} profile pitcher`} /></div>
         <label className="block  mb-2 text-sm font-medium text-gray-900 dark:text-white text-center" htmlFor="file_input">Update Profile Image Upload a 1/1 aspect ratio image</label>
         <input id='uFile' required onChange={(e)=>{setFile(e.target.files[0])}} multiple={false} accept="image/png, image/jpeg" className=" block w-3/4 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" type="file"></input>

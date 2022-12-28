@@ -27,7 +27,7 @@ function Feed() {
   }, [])
   
   return (
-    <div className='basis-5/6 flex flex-col items-center h-screen overflow-y-scroll '>
+    <div className='basis-5/6 flex flex-col items-center h-screen overflow-y-auto  '>
       <SharePost></SharePost>
       {
         timeline.map(

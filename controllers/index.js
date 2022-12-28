@@ -10,6 +10,10 @@ export { default as getPostById } from './getPostById.js';
 export { default as createChat } from './createChat.js';
 export { default as getChat } from './getChat.js';
 export { default as findChat } from './findChat.js';
+// Message
+export { default as getMessage } from './getMessage.js';
+export { default as addMessage } from './addMessage.js';
+
 
 
 

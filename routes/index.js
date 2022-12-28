@@ -5,6 +5,8 @@ import postRoute from "./post.js";
 import uploadRouter from './upload.js';
 import personRouter from './person.js';
 import chatRouter from './chat.js';
+import messageRouter from './message.js';
+
 
 
 
@@ -17,6 +19,7 @@ router.use("/post", postRoute);
 router.use('/upload',uploadRouter);
 router.use('/person',personRouter);
 router.use('/chat',chatRouter);
+router.use('/message',messageRouter)
 
 
 export default router;

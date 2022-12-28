@@ -7,7 +7,9 @@ import fetchUser from "./controllers/fetchUser"
 import { useState } from "react"
 import CheckAuth from './utils/CheckAuth.jsx'
 import Guest from "./utils/Guest"
-
+import ChatPage from "./pages/ChatPage"
+import MessagePage from "./pages/MessagePage"
+import FindFriend from "./pages/FindFriend"
 
   
    function App() {
@@ -39,6 +41,10 @@ import Guest from "./utils/Guest"
     <Route path="/login" element={<Guest><LoginPage></LoginPage></Guest>}></Route>
     <Route path="/register" element={<Guest><RegisterPage></RegisterPage></Guest>}></Route>
     <Route path="/edit" element={<CheckAuth><EditProfile></EditProfile></CheckAuth>}></Route>
+    <Route path="/chat" element={<CheckAuth><ChatPage></ChatPage></CheckAuth>}></Route>
+    <Route path="/message/:chatId/:personId" element={<CheckAuth><MessagePage/></CheckAuth>}></Route>
+    <Route path="/find" element={<CheckAuth><FindFriend/></CheckAuth>}></Route>
+
    </Routes>
    </>
   )

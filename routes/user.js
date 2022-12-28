@@ -80,4 +80,13 @@ router.get('/friends',authMiddleWare,async(req,res)=>{
         res.status(500).json({msg:"there is a error"})
     }
 })
+router.get('/findfriends',async(req,res)=>{
+    try {
+        const find = await User.find({},{firstName:1,lastName:1,userName:1,_id:1,followers:1,dp:1}).limit({$limit: 100})
+        res.json(find)
+    } catch (error) {
+        res.status(500)
+    }
+    
+})
 export default router;

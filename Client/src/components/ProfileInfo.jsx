@@ -37,7 +37,7 @@ function ProfileInfo({profileUser,isUserProfile}) {
     navigate(-1);
   }
   return (
-    <div className=' bg-second flex flex-col items-center rounded-2xl s:w-3/5 '>
+    <div className=' bg-second flex flex-col items-center rounded-2xl s:w-3/5 md:mt-20 mt-10'>
         <Modal setOpen={setOpen} open={open}>{(modalChild == 'dp')?<UpdateDp/>:<UpdateCover/>}</Modal>
         <div className="w-full ">
             <div className="w-full  relative">

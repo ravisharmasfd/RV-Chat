@@ -2,16 +2,15 @@ import FeedIcon from '@mui/icons-material/Feed';
 import ChatIcon from '@mui/icons-material/Chat';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { Link } from 'react-router-dom';
 
 
 function SidebarMenu() {
   return (
-    <div className=' flex w-full flex-row overflow-hidden md:flex-col justify-evenly  md:items-center '>
+    <div className=' flex w-full flex-row items-start md:flex-col justify-evenly md:items-start  mt-10 md:mt-20 md:mb-4 z-20'>
   
       <Link to="/"
-        className="category-btn text-white mt-5 p-0"
+        className="md:ml-10  text-fourth mt-5 p-0 cursor-pointer hover:scale-125 hover:text-white flex flex-row gap-1"
       >
         <span className=' mr-3'>
         <FeedIcon/>
@@ -20,8 +19,8 @@ function SidebarMenu() {
           Feed
         </span>
       </Link>
-      <button
-        className="category-btn text-white mt-5 p-0"
+      <Link to='/chat'
+        className="md:ml-10 text-fourth mt-5 p-0 cursor-pointer hover:scale-125 hover:text-white flex flex-row gap-1"
       >
         <span className='mr-3'>
         <ChatIcon/>
@@ -29,38 +28,28 @@ function SidebarMenu() {
         <span className='hidden md:block'>
           Chats
         </span>
-      </button>
+      </Link>
 
-      <button
-        className="category-btn text-white mt-5 p-0"
+      <Link
+        to="/find"
+        className="md:ml-10 text-fourth mt-5 p-0 cursor-pointer hover:scale-125 hover:text-white flex flex-row gap-1"
       >
         <span className=' mr-3'>
         <Diversity3Icon/>
         </span>
         <span className='hidden md:block'>
-          Group
+          Find Friends
         </span>
-      </button>
+      </Link>
 
       <button
-        className="category-btn text-white mt-5 p-0"
+        className="md:ml-10 text-fourth mt-5 p-0 cursor-pointer hover:scale-125 hover:text-white flex flex-row gap-1"
       >
         <span className=' mr-3'>
         <BookmarkAddedIcon/>
         </span>
         <span className='hidden md:block'>
         Bookmarks
-        </span>
-      </button>
-
-      <button
-        className="category-btn text-white mt-5 p-0"
-      >
-        <span className=' mr-3'>
-        <CalendarMonthIcon/>
-        </span>
-        <span className='hidden md:block'>
-          Events
         </span>
       </button>
       

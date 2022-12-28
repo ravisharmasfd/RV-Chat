@@ -17,8 +17,8 @@ function Modal({setOpen,open,children}) {
   },[open])
   return (
     <div ref={modalRef} className='h-screen w-screen hidden top-0 right-0 model'>
-        <div className="absolute h-full w-full  bg-white/20 ">
-        <div className="flex flex-col justify-center h-full w-full items-center">
+        <div className="absolute h-full w-full  bg-white/30 ">
+        <div className="flex flex-col justify-center h-full w-full items-center overflow-hidden">
             <div onClick={()=>{
               setOpen(false);
             }} className='flex flex-row justify-end hover:animate-spin hover:scale-125 text-9xl text-red-700 hover:bg-first aspect-square rounded-full hover:text-white cursor-pointer'>
