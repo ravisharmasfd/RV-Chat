@@ -2,6 +2,16 @@
 export { default as loginController } from './login.js';
 export { default as registerController } from './register.js';
 export { default as timelineAll } from './timelineAll.js';
+//User
+export { default as findFriends } from './findFriends.js';
+export { default as getFriends } from './getFriends.js';
+export { default as follow } from './follow.js';
+export { default as unfollow } from './unfollow.js';
+export { default as updateUser } from './updateUser.js';
+
+
+
+
 // Post
 export { default as likePost } from './likePost.js';
 export { default as deletePost } from './deletePost.js';

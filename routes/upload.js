@@ -59,7 +59,6 @@ const router = Router();
 router.post('/post',authMiddleWare,async(req, res) => {
     try {
         const {description} = req.body;
-        console.log()
         await upload(req, res,async(err) => {
             if(err) {
                 res.send(err);

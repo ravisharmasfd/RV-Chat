@@ -148,13 +148,13 @@ function MessagePage() {
                     self = "self-start"
                     bgColor = 'bg-second'
                 }
-                return <div ref={scroll}  className={self} key={msg._id}>
-                    <div>
+                return <div ref={scroll}  className={`${self} flex flex-col max-w-[70vw] text-center`} key={msg._id}>
+                    <div className=''>
                         <div className='flex-col flex p-2 m-2'><span className='font-bold mr-1'>{name}</span>
                         <span className='text-[grey]'>{moment(msg?.createdAt).fromNow()}</span></div>
                         
                     </div>
-                    <span className={`${bgColor} m-2 p-2 rounded-lg text-white border-2 border-solid border-white`}>{msg.text}</span>
+                    <span className={`${bgColor} m-2 p-2 rounded-lg text-ellipsis break-words text-white border-2 border-solid border-white`}>{msg.text}</span>
                 </div>
             })}
         </div>

@@ -43,6 +43,9 @@ function SidebarMenu() {
       </Link>
 
       <button
+      onClick={()=>{
+        alert("Save post feature not availabe right now")
+      }}
         className="md:ml-10 text-fourth mt-5 p-0 cursor-pointer hover:scale-125 hover:text-white flex flex-row gap-1"
       >
         <span className=' mr-3'>

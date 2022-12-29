@@ -3,7 +3,6 @@ import Post from '../models/post.js';
 const deletePost = async (req, res) => {
     try {
       const postUpdate = await Post.findById(req.params.id);
-      console.log("🚀 ~ file: post.js:40 ~ router.delete ~ postUpdate", postUpdate)
       
       if (postUpdate.postedBy.toString() === req.user._id.toString()) {
         console.log("first")
