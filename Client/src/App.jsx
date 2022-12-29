@@ -10,6 +10,7 @@ import Guest from "./utils/Guest"
 import ChatPage from "./pages/ChatPage"
 import MessagePage from "./pages/MessagePage"
 import FindFriend from "./pages/FindFriend"
+import FourZeroFour from "./pages/FourZeroFour"
 
   
    function App() {
@@ -44,6 +45,7 @@ import FindFriend from "./pages/FindFriend"
     <Route path="/chat" element={<CheckAuth><ChatPage></ChatPage></CheckAuth>}></Route>
     <Route path="/message/:chatId/:personId" element={<CheckAuth><MessagePage/></CheckAuth>}></Route>
     <Route path="/find" element={<CheckAuth><FindFriend/></CheckAuth>}></Route>
+    <Route path="*" element={<FourZeroFour/>}></Route>
 
    </Routes>
    </>
